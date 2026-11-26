@@ -1,0 +1,13 @@
+{
+  "name": "pistoleros-de-chatarra",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Juego de tiros western en 3D con modo online (Cloudflare Workers + Durable Objects)",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

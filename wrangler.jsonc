@@ -1,0 +1,22 @@
+{
+  // Configuración de Cloudflare Workers para Pistoleros de Chatarra 3D
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pistoleros-de-chatarra",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-10-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "durable_objects": {
+    "bindings": [
+      { "name": "ROOM", "class_name": "Room" },
+      { "name": "BOARD", "class_name": "Board" }
+    ]
+  },
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["Room"] },
+    { "tag": "v2", "new_sqlite_classes": ["Board"] }
+  ],
+  "observability": { "enabled": true }
+}
